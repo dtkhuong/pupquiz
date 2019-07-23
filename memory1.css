@@ -1,47 +1,127 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 
+body {
+    background: #a2d5f2;
+    height: 100vh;
+    display: flex;
+}
+
+.navbar {
+    font-family: 'Dosis', sans-serif;
+    background-color: #FAFAFA;
+    border-top: 20px solid #FF7E67;
+    width: 100%;
+    box-shadow: 0px 10px 30px 5px rgba(7,79,159,0.2);
+    padding: 0 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.navbar-brand {
+    font-family: 'Sue Ellen Francisco', cursive;
+    /* box-sizing: border-box; */
+}
+
+.navbar a.navbar-brand {
+    float: left;
+    /* height: inherit; */
+    /* padding: auto 30px; */
+    /* margin: auto auto; */
+    font-size: 45px;
+    letter-spacing: 2px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #07689F;
+}
+
+.navbar ul {
+    float: right;
+    list-style: none;
+    height: inherit; 
+    line-height: inherit;
+    padding: 0 50px;
+}
+
+.navbar ul button, .navbar ul p {
+    display: inline-block;
+    /* text-align: center; */
+    margin: auto 30px;
+    font-size: 18px;
+    /* vertical-align: bottom; */
+    /* height: 100%; */
+}
+
+.navbar ul p {
+    padding: 2em;
+}
+
+.reset {
+    font-family: inherit;
+    border: 3px solid #07689F;
+    border-radius: 8px;
+    height: auto;
+    transition-duration: 0.2s;
+    padding: 1em;
+}
+
+.reset:hover {
+    background-color: #07689F;
+    color: #FAFAFA;
+}
+
+.reset:active {
+    transform: scale(.97);
+}
 
 .memory-game {
-    margin: auto;
-    width: 900px;
+    width: 640px;
     height: 640px;
     display: flex;
     flex-wrap: wrap;
+    border: 2px solid lime;
+    margin: auto;
+    perspective: 1000px;
 }
 
 .memory-card {
-    display: flex;
+    width: 25%;
+    height: 33.333%;
     position: relative;
-    width: 18%;
-    height: 20%;
-    margin: auto auto;
-    overflow: hidden;
-    justify-content: center;
-    align-items: center;
-    background-color: #FAFAFA; 
-    border-radius: 10px;
+    border: 2px solid aqua;
+    margin: 5px;
     transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
 }
 
-.memory-card:hover{
+.memory-card:active {
     transform: scale(.97);
-    transition: transform .2s;
+    transition: transform.2s
 }
 
 .memory-card.flip {
     transform: rotateY(180deg);
 }
 
-.front-face{
+.front-face, .back-face {
+    width: 100%;
+    height: 100%;
     position: absolute;
-    height: auto;
+    border: 2px solid deeppink;
+    border-radius: 5px;
+    background: white;
     backface-visibility: hidden;
 }
 
-.front-face {
-    max-width: 50%;
-    margin: auto auto;
-    background-color: white;
-    padding: 50px 50px;
+.back-face {
     transform: rotateY(180deg);
 }
+
 
