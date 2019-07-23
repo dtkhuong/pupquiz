@@ -10,31 +10,108 @@
     <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- <nav class="navbar">
+    <nav class="navbar">
         <a href="#" class="navbar-brand">PupQuiz</a>
         <ul>
             <p class="currentScore">Current Score <span id="currentScore"></span></p>
             <p class="bestScore">Best Game Score <span class="bestScore"></span></p>
             <button class="reset">Reset Game</button>
         </ul>
-    </nav> -->
+    </nav>
 
-    <section class="memory-game">
-        <div class="memory-card">
-            <img class="front-face" src="samoyed.jpeg">
-            <img class="logo-back" src="dog.png">
+
+
+    <section class="memory-section">
+        <div class="memory-game">
+            <div class="memory-card" data-name="puppy">
+                <img class="front-face" src="dog.png">
+                <img id="puppy" class="back-face" src="puppy.jpeg">
+            </div>
+            <div class="memory-card" data-name="puppy">
+                <img class="front-face" src="dog.png">
+                <img id="puppy" class="back-face" src="puppy.jpeg">
+            </div>
+            <div class="memory-card"data-name="blackwhite">
+                <img class="front-face" src="dog.png">
+                <img id="blackwhite" class="back-face" src="blackwhite.jpeg">
+            </div>
+            <div class="memory-card" data-name="blackwhite">
+                <img class="front-face" src="dog.png">
+                <img id="blackwhite" class="back-face" src="blackwhite.jpeg">
+            </div>
+            <div class="memory-card" data-name="corgi">
+                <img class="front-face" src="dog.png">
+                <img id="corgi" class="back-face" src="corgi.jpeg">
+            </div>
+            <div class="memory-card" data-name="corgi">
+                <img class="front-face" src="dog.png">
+                <img id="corgi" class="back-face" src="corgi.jpeg">
+            </div>
+            <div class="memory-card" data-name="samoyed">
+                <img class="front-face" src="dog.png">
+                <img id="samoyed" class="back-face" src="samoyed.jpeg">
+            </div>
+            <div class="memory-card" data-name="samoyed">
+                <img class="front-face" src="dog.png">
+                <img class="back-face" src="samoyed.jpeg">
+            </div>
+            <div class="memory-card" data-name="husky">
+                <img class="front-face" src="dog.png">
+                <img class="back-face" src="https://images.unsplash.com/photo-1532101585208-601806c8b6e1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80">
+            </div>
+            <div class="memory-card" data-name="husky">
+                <img class="front-face" src="dog.png">
+                <img class="back-face" src="https://images.unsplash.com/photo-1532101585208-601806c8b6e1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80">
+            </div>
+            <div class="memory-card" data-name="poodle">
+                <img class="front-face" src="dog.png">
+                <img class="back-face"  style="object-position: 0 30px;" src="https://images.unsplash.com/photo-1545573139-feec87d23486?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80">
+            </div>
+            <div class="memory-card" data-name="poodle">
+                <img class="front-face" src="dog.png">
+                <img class="back-face"  style="object-position: 0 30px;" src="https://images.unsplash.com/photo-1545573139-feec87d23486?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80">
+            </div>
+            <div class="memory-card" data-name="brownwhite">
+                <img class="front-face" src="dog.png">
+                <img class="back-face" style="object-position: 0 -30px;" src="https://images.unsplash.com/photo-1560807707-8cc77767d783?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80">
+            </div>
+            <div class="memory-card" data-name="brownwhite">
+                <img class="front-face" src="dog.png">
+                <img class="back-face" style="object-position: 0 -30px;" src="https://images.unsplash.com/photo-1560807707-8cc77767d783?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80">
+            </div>
+            <div class="memory-card" data-name="jumping">
+                <img class="front-face" src="dog.png">
+                <img class="back-face" src="https://images.unsplash.com/photo-1530126483408-aa533e55bdb2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1001&q=80">
+            </div>
+            <div class="memory-card" data-name="jumping">
+                <img class="front-face" src="dog.png">
+                <img class="back-face" src="https://images.unsplash.com/photo-1530126483408-aa533e55bdb2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1001&q=80">
+            </div>
+            <div class="memory-card" data-name="brownie">
+                <img class="front-face" src="dog.png">
+                <img class="back-face" src="https://images.unsplash.com/photo-1510074170509-3958bcb8ab3d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=684&q=80">
+            </div>
+            <div class="memory-card" data-name="brownie">
+                <img class="front-face" src="dog.png">
+                <img class="back-face" src="https://images.unsplash.com/photo-1510074170509-3958bcb8ab3d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=684&q=80">
+            </div>
+            <div class="memory-card" data-name="beachboy">
+                <img class="front-face" src="dog.png">
+                <img class="back-face" src="https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80">
+            </div>
+            <div class="memory-card"data-name="beachboy">
+                <img class="front-face" src="dog.png">
+                <img class="back-face" src="https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80">
+            </div>
         </div>
-        <div class="memory-card">
-            <img class="front-face" src="corgi.jpeg">
-            <img class="logo-back" src="dog.png">
-        </div>
-
-
     </section>
-
- 
     
-   
+    
+    
+    <!-- <div class="title">
+        <h1>FETCH</h1>
+        <H6>Match up the dogs in as few clicks as possible!</H6>
+    </div> -->
 
 
     <script type="text/javascript" src="memory1.js"></script>

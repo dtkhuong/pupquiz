@@ -1,13 +1,10 @@
 * {
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
 }
 
 body {
     background: #a2d5f2;
-    height: 100vh;
-    display: flex;
 }
 
 .navbar {
@@ -80,48 +77,83 @@ body {
     transform: scale(.97);
 }
 
+.memory-section {
+    display: flex;
+    height: 60vh;
+    margin-top: 120px;
+}
 .memory-game {
-    width: 640px;
+    margin: auto;
+    /* border: 2px solid #FAFAFA; */
+    width: 900px;
     height: 640px;
     display: flex;
     flex-wrap: wrap;
-    border: 2px solid lime;
-    margin: auto;
-    perspective: 1000px;
 }
 
 .memory-card {
-    width: 25%;
-    height: 33.333%;
+    display: flex;
+    /* border: 2px solid #FF7E67; */
     position: relative;
-    border: 2px solid aqua;
-    margin: 5px;
+    width: 18%;
+    height: 20%;
+    /* width: calc(20% - 10px);
+    height: calc(33.333% - 10px); */
+    margin: auto auto;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    background-color: #FAFAFA; 
+    border-radius: 10px;
     transform: scale(1);
-    transform-style: preserve-3d;
-    transition: transform .5s;
 }
 
-.memory-card:active {
+.memory-card:hover{
     transform: scale(.97);
-    transition: transform.2s
+    transition: transform .2s;
 }
 
 .memory-card.flip {
     transform: rotateY(180deg);
+    /* z-index: 1; */
 }
 
-.front-face, .logo-back {
-    width: 100%;
-    height: 100%;
+.front-face, .back-face {
     position: absolute;
-    border: 2px solid deeppink;
-    border-radius: 5px;
-    background: white;
+    height: auto;
     backface-visibility: hidden;
+    /* border: 2px solid deeppink; */
 }
 
 .front-face {
+    max-width: 50%;
+    margin: auto auto;
+    background-color: white;
+    padding: 50px 50px;
     transform: rotateY(180deg);
 }
 
+.back-face {
+    max-width: 100%;
+    border-radius: 10px;
+    /* transform: rotateY(180deg); */
+    /* z-index: 1; */
+    backface-visibility: hidden;
+}
 
+#puppy {
+    object-position: 0 20px;
+}
+
+#blackwhite {
+    /* object-position: 0 110px; */
+    max-width:100%;
+}
+
+#corgi {
+    max-width: 100%;
+}
+
+#samoyed {
+    max-height: 100%;
+}
