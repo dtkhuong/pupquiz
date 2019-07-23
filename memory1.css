@@ -1,90 +1,7 @@
-* {
-    padding: 0;
-    margin: 0;
-}
 
-body {
-    background: #a2d5f2;
-}
 
-.navbar {
-    font-family: 'Dosis', sans-serif;
-    background-color: #FAFAFA;
-    border-top: 20px solid #FF7E67;
-    width: 100%;
-    box-shadow: 0px 10px 30px 5px rgba(7,79,159,0.2);
-    padding: 0 30px;
-    position: fixed;
-    top: 0;
-    left: 0;
-}
-
-.navbar-brand {
-    font-family: 'Sue Ellen Francisco', cursive;
-    /* box-sizing: border-box; */
-}
-
-.navbar a.navbar-brand {
-    float: left;
-    /* height: inherit; */
-    /* padding: auto 30px; */
-    /* margin: auto auto; */
-    font-size: 45px;
-    letter-spacing: 2px;
-}
-
-.navbar a {
-    text-decoration: none;
-    color: #07689F;
-}
-
-.navbar ul {
-    float: right;
-    list-style: none;
-    height: inherit; 
-    line-height: inherit;
-    padding: 0 50px;
-}
-
-.navbar ul button, .navbar ul p {
-    display: inline-block;
-    /* text-align: center; */
-    margin: auto 30px;
-    font-size: 18px;
-    /* vertical-align: bottom; */
-    /* height: 100%; */
-}
-
-.navbar ul p {
-    padding: 2em;
-}
-
-.reset {
-    font-family: inherit;
-    border: 3px solid #07689F;
-    border-radius: 8px;
-    height: auto;
-    transition-duration: 0.2s;
-    padding: 1em;
-}
-
-.reset:hover {
-    background-color: #07689F;
-    color: #FAFAFA;
-}
-
-.reset:active {
-    transform: scale(.97);
-}
-
-.memory-section {
-    display: flex;
-    height: 60vh;
-    margin-top: 120px;
-}
 .memory-game {
     margin: auto;
-    /* border: 2px solid #FAFAFA; */
     width: 900px;
     height: 640px;
     display: flex;
@@ -93,12 +10,9 @@ body {
 
 .memory-card {
     display: flex;
-    /* border: 2px solid #FF7E67; */
     position: relative;
     width: 18%;
     height: 20%;
-    /* width: calc(20% - 10px);
-    height: calc(33.333% - 10px); */
     margin: auto auto;
     overflow: hidden;
     justify-content: center;
@@ -115,14 +29,12 @@ body {
 
 .memory-card.flip {
     transform: rotateY(180deg);
-    /* z-index: 1; */
 }
 
-.front-face, .back-face {
+.front-face{
     position: absolute;
     height: auto;
     backface-visibility: hidden;
-    /* border: 2px solid deeppink; */
 }
 
 .front-face {
@@ -133,27 +45,3 @@ body {
     transform: rotateY(180deg);
 }
 
-.back-face {
-    max-width: 100%;
-    border-radius: 10px;
-    /* transform: rotateY(180deg); */
-    /* z-index: 1; */
-    backface-visibility: hidden;
-}
-
-#puppy {
-    object-position: 0 20px;
-}
-
-#blackwhite {
-    /* object-position: 0 110px; */
-    max-width:100%;
-}
-
-#corgi {
-    max-width: 100%;
-}
-
-#samoyed {
-    max-height: 100%;
-}
