@@ -4,18 +4,24 @@ var lockBoard = false;
 var firstCard, secondCard;
 var resetButton = document.querySelector('.reset');
 var currentScore = 0;
+var numberOfMatches = 0;
+var bestScore = 0;
+var previousBestScore = localStorage.getItem('bestScore');
+    console.log('previous best score is' + previousBestScore);
 
+// show bestScore
+document.querySelector('#bestScore').textContent = localStorage.getItem('bestScore');
 
-function shuffle(){
-    // console.log('shuffled');
-    for (var i = 0 ; i < cards.length; i++){
-        var randomPos = Math.floor(Math.random()* 20);
-        cards[i].style.order = randomPos;
-        console.log(randomPos);
+//reset button functionality
+resetButton.addEventListener('click', () => {
+    console.log('resetted');
+    document.querySelector('#currentScore').textContent = 0;
+    currentScore = 0;
+    for (var i = 0; i < cards.length; i++){
+        cards[i].classList.remove('flip')
     }
-};
-
-resetButton.addEventListener('click', shuffle);
+    shuffle();
+});
  
 function flipCard() {
     if (lockBoard) return;
@@ -30,7 +36,6 @@ function flipCard() {
     } else {
             hasFlippedCard = false;
             secondCard = this;
-            console.log(this);
         //do cards match?
             if (firstCard.dataset.name === secondCard.dataset.name){
                 //it's a match --> disable the card by removing event listener
@@ -38,7 +43,10 @@ function flipCard() {
                     secondCard.removeEventListener('click', flipCard);
                     resetBoard();
                     currentScore += 1;
-                    console.log(currentScore);
+                    numberOfMatches += 1;
+                    if (numberOfMatches >= 10 && currentScore < previousBestScore){
+                        localStorage.setItem('bestScore', currentScore);
+                    }
             } else {
                 //not a match --> lock the board, unflip the card by removing the flip class, then unlock the board
                     lockBoard = true;
@@ -48,9 +56,8 @@ function flipCard() {
                         resetBoard();
                     }, 1500);
                     currentScore += 1;
-                    console.log(currentScore);
                     
-            }fm
+            }
     }
     document.querySelector('#currentScore').textContent =  currentScore;
 }
@@ -66,10 +73,17 @@ function resetBoard(){
     [firstCard, secondCard] = [null, null];
 }
 
+//shuffles card as soon as page loads
 (function shuffle(){
     for (var i = 0 ; i < cards.length; i++){
         var randomPos = Math.floor(Math.random()* 20);
         cards[i].style.order = randomPos;
-        console.log(randomPos);
     }
 })();
+
+function shuffle(){
+    for (var i = 0 ; i < cards.length; i++){
+        var randomPos = Math.floor(Math.random()* 20);
+        cards[i].style.order = randomPos;
+    }
+};

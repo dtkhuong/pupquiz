@@ -1,6 +1,7 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -17,11 +18,13 @@ body {
     position: fixed;
     top: 0;
     left: 0;
+    /* z-index: 1; */
 }
 
 .navbar-brand {
-    font-family: 'Sue Ellen Francisco', cursive;
-    /* box-sizing: border-box; */
+    font-family: 'Londrina Shadow', cursive;
+    padding-top: 1rem;
+    
 }
 
 .navbar a.navbar-brand {
@@ -29,7 +32,7 @@ body {
     /* height: inherit; */
     /* padding: auto 30px; */
     /* margin: auto auto; */
-    font-size: 45px;
+    font-size: 50px;
     letter-spacing: 2px;
 }
 
@@ -78,68 +81,79 @@ body {
 }
 
 .memory-section {
+    /* GOOD */
     display: flex;
     height: 60vh;
     margin-top: 120px;
 }
 
 .memory-game {
-    width: 640px;
+    /* GOOD */
+    width: 900px;
     height: 640px;
     display: flex;
     flex-wrap: wrap;
-    border: 2px solid lime;
     margin: auto;
-    perspective: 1000px;
+    /* perspective: 1000px; */
 }
 
 .memory-card {
-    width: 25%;
-    height: 33.333%;
+    display: flex;
+    width: 18%;
+    height: 20%;
     position: relative;
-    border: 2px solid aqua;
-    margin: 5px;
+    margin: auto;
+    /* justify-content: center;
+    align-items: center; */
     transform: scale(1);
     transform-style: preserve-3d;
     transition: transform .5s;
+    /* border: 2px solid blue; */
 }
 
-.memory-card:active {
+.memory-card:hover {
+    /* GOOD */
     transform: scale(.97);
     transition: transform.2s
 }
 
 .memory-card.flip {
+    /* GOOD */
     transform: rotateY(180deg);
 }
 
-.front-face, .logo-back {
-    width: 100%;
-    height: 100%;
+.front-face, .back-face{
+    /* width: 100%;
+    height: 100%; */
     position: absolute;
-    border: 2px solid deeppink;
+    /* border: 2px solid deeppink; */
     border-radius: 5px;
-    background: white;
     backface-visibility: hidden;
 }
 
-.back-face {
-    transform: rotateY(180deg);
+.front-face {
+    /* dog.png; */
+    max-width: 50%;
+    margin-left: 25%; 
+    margin-top: 15%;
+    background-color: white;
+    padding: 10px;
+    display: flex;
 }
 
-
-
-
 .back-face {
+    /* GOOD */
+    /* dog photos */
     max-width: 100%;
-    border-radius: 10px;
-    /* transform: rotateY(180deg); */
-    /* z-index: 1; */
-    backface-visibility: hidden;
+    align-items: center;
+    /* border-radius: 10px; */
+    transform: rotateY(180deg);
+    /* overflow: hidden; */
+    object-fit: contain;
 }
 
 #puppy {
-    object-position: 0 20px;
+    /* object-position: 0 20px; */
 }
 
 #blackwhite {
@@ -152,5 +166,10 @@ body {
 }
 
 #samoyed {
+    max-height: 100%;
+}
+
+#husky {
+    display:flex;
     max-height: 100%;
 }
