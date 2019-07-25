@@ -1,6 +1,6 @@
 * {
     padding: 0;
-    margin: 0;
+    /* margin: 0; */
     box-sizing: border-box;
 }
 
@@ -18,7 +18,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    /* z-index: 1; */
+    z-index: 1;
 }
 
 .navbar-brand {
@@ -46,7 +46,7 @@ body {
     list-style: none;
     height: inherit; 
     line-height: inherit;
-    padding: 0 50px;
+    padding: 0 1em;
 }
 
 .navbar ul button, .navbar ul p {
@@ -59,7 +59,7 @@ body {
 }
 
 .navbar ul p {
-    padding: 2em;
+    padding: 2px;
 }
 
 .reset {
@@ -103,8 +103,8 @@ body {
     height: 20%;
     position: relative;
     margin: auto;
-    /* justify-content: center;
-    align-items: center; */
+    justify-content: center;
+    align-items: center;
     transform: scale(1);
     transform-style: preserve-3d;
     transition: transform .5s;
@@ -123,53 +123,27 @@ body {
 }
 
 .front-face, .back-face{
-    /* width: 100%;
-    height: 100%; */
     position: absolute;
-    /* border: 2px solid deeppink; */
     border-radius: 5px;
     backface-visibility: hidden;
 }
 
 .front-face {
     /* dog.png; */
-    max-width: 50%;
-    margin-left: 25%; 
-    margin-top: 15%;
+    max-height: 100%;
+    width: 100%;
+    margin: auto;
     background-color: white;
-    padding: 10px;
-    display: flex;
+    padding: 20% 30%;
+    box-shadow: 0px 10px 10px 5px rgba(7,79,159,0.2);
+    
 }
 
 .back-face {
     /* GOOD */
     /* dog photos */
-    max-width: 100%;
+    width: 100%;
+    max-height: 100%;
     align-items: center;
-    /* border-radius: 10px; */
     transform: rotateY(180deg);
-    /* overflow: hidden; */
-    object-fit: contain;
-}
-
-#puppy {
-    /* object-position: 0 20px; */
-}
-
-#blackwhite {
-    /* object-position: 0 110px; */
-    max-width:100%;
-}
-
-#corgi {
-    max-width: 100%;
-}
-
-#samoyed {
-    max-height: 100%;
-}
-
-#husky {
-    display:flex;
-    max-height: 100%;
 }
