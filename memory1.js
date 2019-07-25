@@ -75,7 +75,7 @@ function flipCard() {
                     resetBoard();
                     currentScore += 1;
                     numberOfMatches += 1;
-                    if (numberOfMatches >= 1 && ((currentScore < previousBestScore) || (previousBestScore === null))){
+                    if (numberOfMatches >= 10 && ((currentScore < previousBestScore) || (previousBestScore === null))){
                         localStorage.setItem('bestScore', currentScore);
                         previousBestScore = currentScore;
                     }
